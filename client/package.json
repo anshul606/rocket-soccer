@@ -1,0 +1,22 @@
+{
+  "name": "@rocket-soccer/client",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@rocket-soccer/shared": "0.0.1",
+    "socket.io-client": "^4.8.1",
+    "three": "^0.172.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/three": "^0.169.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7"
+  }
+}

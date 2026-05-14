@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocket Soccer MVP</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="menu" class="panel">
+        <h1>Rocket Soccer <span class="tag">MVP</span></h1>
+        <p class="sub">Private 1v1 rooms · server physics · Three.js</p>
+        <label>Name <input id="name" maxlength="16" placeholder="Player" /></label>
+        <div class="row">
+          <button id="btn-create">Create room</button>
+          <button id="btn-join">Join room</button>
+        </div>
+        <div id="join-row" class="hidden">
+          <label>Room code <input id="code" maxlength="8" placeholder="ABC123" /></label>
+          <button id="btn-join-go">Connect</button>
+        </div>
+        <p id="menu-msg" class="msg"></p>
+      </div>
+
+      <div id="lobby" class="panel hidden">
+        <h2>Lobby <span id="lobby-code" class="code"></span></h2>
+        <ul id="player-list"></ul>
+        <div class="row">
+          <label>Team</label>
+          <select id="team">
+            <option value="blue">Blue</option>
+            <option value="orange">Orange</option>
+          </select>
+          <button id="btn-ready">Ready</button>
+          <button id="btn-start" class="hidden">Start match</button>
+        </div>
+        <p id="lobby-msg" class="msg"></p>
+      </div>
+
+      <div id="hud" class="hud hidden">
+        <div class="hud-top">
+          <div id="score" class="score">0 — 0</div>
+          <div id="timer" class="timer">5:00</div>
+        </div>
+        <div class="hud-bottom">
+          <div id="boost-wrap"><div id="boost-bar"></div></div>
+          <div id="phase-msg" class="phase"></div>
+        </div>
+      </div>
+
+      <div id="help" class="help hidden">
+        <kbd>W</kbd>/<kbd>S</kbd> drive · <kbd>A</kbd>/<kbd>D</kbd> steer · <kbd>X</kbd> brake · <kbd>Space</kbd> jump · <kbd>Shift</kbd> boost ·
+        <kbd>Ctrl</kbd> drift · <kbd>C</kbd> ball cam · <kbd>R</kbd> reset
+      </div>
+
+      <div id="countdown-overlay" class="hidden">
+        <div id="countdown-text">3</div>
+      </div>
+
+      <div id="end-screen" class="panel hidden">
+        <h1 id="end-title">Game Over</h1>
+        <p id="end-score" class="score">0 - 0</p>
+        <div class="row">
+          <button id="btn-rematch" class="hidden">Rematch</button>
+          <button id="btn-menu" class="secondary">Main Menu</button>
+        </div>
+      </div>
+    </div>
+    <canvas id="c"></canvas>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
